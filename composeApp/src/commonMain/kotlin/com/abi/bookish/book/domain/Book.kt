@@ -7,7 +7,7 @@ data class Book(
     val authors: List<String>,
     val description: String?,
     val languages: List<String>,
-    val firstPublished: String,
+    val firstPublished: String?,
     val avgRatings: Double?,
     val ratingsCount: Int?,
     val numPages: Int?,
