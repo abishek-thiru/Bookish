@@ -34,7 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import bookish.composeapp.generated.resources.Res
 import bookish.composeapp.generated.resources.favorites
-import bookish.composeapp.generated.resources.no_favorites
+import bookish.composeapp.generated.resources.no_favorite_books
 import bookish.composeapp.generated.resources.no_search_results
 import bookish.composeapp.generated.resources.search_results
 import com.abi.bookish.book.domain.Book
@@ -218,7 +218,7 @@ private fun BookListScreen(
                             1 -> {
                                 if (state.favoriteBooks.isEmpty()) {
                                     Text(
-                                        text = stringResource(Res.string.no_favorites),
+                                        text = stringResource(Res.string.no_favorite_books),
                                         textAlign = TextAlign.Center,
                                         style = MaterialTheme.typography.headlineSmall
                                     )
