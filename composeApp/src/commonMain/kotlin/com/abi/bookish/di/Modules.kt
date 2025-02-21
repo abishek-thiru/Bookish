@@ -5,6 +5,7 @@ import com.abi.bookish.book.data.network.RemoteDataSource
 import com.abi.bookish.book.data.repository.DefaultRepository
 import com.abi.bookish.book.domain.BookRepository
 import com.abi.bookish.book.presentation.SelectedBookViewModel
+import com.abi.bookish.book.presentation.book_detail.BookDetailViewModel
 import com.abi.bookish.book.presentation.book_list.BookListViewModel
 import com.abi.bookish.core.data.HttpClientFactory
 import org.koin.core.module.Module
@@ -24,4 +25,5 @@ val sharedModule = module {
 
     viewModelOf(::BookListViewModel)
     viewModelOf(::SelectedBookViewModel)
+    viewModelOf(::BookDetailViewModel)
 }
