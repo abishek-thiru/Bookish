@@ -1,5 +1,6 @@
 package com.abi.bookish.book.data.network
 
+import com.abi.bookish.book.data.dto.BookWorkDto
 import com.abi.bookish.book.data.dto.SearchResponseDto
 import com.abi.bookish.core.domain.DataError
 import com.abi.bookish.core.domain.Result
@@ -9,4 +10,8 @@ interface RemoteDataSource {
         query: String,
         resultLimit: Int? = null
     ): Result<SearchResponseDto, DataError.Remote>
+
+    suspend fun getBookDetails(
+        bookWorkId: String
+    ): Result<BookWorkDto, DataError.Remote>
 }
