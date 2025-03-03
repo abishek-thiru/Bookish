@@ -1,5 +1,8 @@
 package com.abi.bookish.di
 
+import androidx.sqlite.driver.bundled.BundledSQLiteDriver
+import com.abi.bookish.book.data.database.DatabaseFactory
+import com.abi.bookish.book.data.database.FavoriteBookDatabase
 import com.abi.bookish.book.data.network.KtorRemoteBookDataSource
 import com.abi.bookish.book.data.network.RemoteDataSource
 import com.abi.bookish.book.data.repository.DefaultRepository
@@ -22,6 +25,13 @@ val sharedModule = module {
     }
     singleOf(::KtorRemoteBookDataSource).bind<RemoteDataSource>()
     singleOf(::DefaultRepository).bind<BookRepository>()
+
+    single {
+        get<DatabaseFactory>().create()
+            .setDriver(BundledSQLiteDriver())
+            .build()
+    }
+    single { get<FavoriteBookDatabase>().favoriteBookDao }
 
     viewModelOf(::BookListViewModel)
     viewModelOf(::SelectedBookViewModel)
