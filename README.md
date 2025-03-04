@@ -15,7 +15,7 @@ You can search for the books and add them to your favorites.
 
 ## App Screenshots
 <p align="center">
-  <img src="screenshots/CMP.jpg" width="200" alt="Loading View">
+  <img src="screenshots/CMP.jpg" width="800" alt="Loading View">
 </p>
 
 ## CMP
